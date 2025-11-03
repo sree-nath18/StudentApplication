@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+<style>
+    .Modal {
+        display: none;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.6);/*transparent black overlay (dim effect)*/
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content{
+        background-color:white;
+        color:brown;
+        padding:20px 30px;
+        border-radius:10px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.3) ;
+        width:450px;
+        text-align:center;
+        animation:popup 1s ease;
+    }
+    .close-btn {
+        display:block;
+        margin:20px auto 0 auto /*here top right bottom left    auto will set  in center equally based on the left and right space example 500 is total width 200 itemm 200*/;
+        padding: 10px;
+        width: 100px;
+        /*border:none;*/
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        
+    }
+    .close-btn:hover{
+        background-color:green
+    }
+    @@keyframes popup{
+        from{
+            transform:scale(0.5);
+            opacity:0
+        }
+        to{
+            transform:scale(1);
+            opacity:1;
+        }
+    }
+.gradient{
+    font-display:swap;
+    font-size-adjust:initial;
+    font-family:'Californian FB';
+    /*font-style:italic;*/
+}
+    </style>
+
+<div class="Modal" id="Welcomemodal">
+    <div class="modal-content">
+        <h1>Welcome to VedicPatasala Portal @Session["Name"]</h1>
+        <button  class="close-btn" onclick="CloseModal()">OK</button>
+    </div>
+</div>
+<h2 style="text-align:center">Home page</h2>
+<img style="padding-left:380px"  src="~/Images/firstslider.png" alt="image" height="40%" width="60%" />
+<h2 class="gradient">
+    The school beautifully blends tradition and modernity,  uniformed modern classrooms with blackboards and projectors. In the innovation lab, children explore science experiments, robotics, and creative projects, while the library offers a harmonious mix of ancient scriptures and contemporary textbooks. Outside, students play traditional games like kabaddi and kho-kho alongside football and cricket, and the dining hall shows them eating traditional meals on banana leaves. Some sit cross-legged in meditation, cultivating calm and focus, while under a banyan tree, a guru guides students in traditional teachings. The campus comes alive with music, dance, and cultural performances, all set against a backdrop of harmonious architecture blending heritage and modernity.
+</h2>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            document.getElementById("Welcomemodal").style.display = "flex";
+        }, 2000); // 2000 ms = 2 seconds
+    };
+    function CloseModal() {
+        document.getElementById('Welcomemodal').style.display='none'
+
+    }
+</script>
+
+

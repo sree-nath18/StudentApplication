@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Student Portal</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 120px; /* space for fixed navbar */
+            margin: 0;
+        }
+
+        .sidebar {
+            /*background-color: #f8f9fa;*/
+            background-color: blanchedalmond;
+            padding: 20px;
+            top: 120px;
+            width: 250px;
+            position: fixed;
+            left: 0;
+            min-height: calc(100vh - 160px); /* fill space above footer */
+            border-right: 1px solid #ddd;
+        }
+
+        .main-content {
+            min-height: calc(100vh - 160px);
+            width: calc(100vw - 250px); /* Sidebar width subtracted */
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            /*padding: 15px;*/
+            box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
+        }
+
+        label.required::after {
+            content: "*";
+            color: red;
+        }
+
+        .footer-left {
+            margin: 0;
+            padding-left: 200px;
+            display: flex;
+            justify-content: flex-start;
+        }
+        /* Default width for large screens */
+        /*Use double @@media — Razor will render it as single @@media in the HTML output.*/
+
+        /* For tablets (below 992px) */
+        @@media (max-width: 992px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main-content {
+                margin-left: 200px;
+            }
+        }
+
+        /* For mobiles (below 768px) */
+        @@media (max-width: 768px) {
+            .sidebar {
+                width: 160px;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .main-content {
+                margin-left: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a style="font-size:50px" class="navbar-brand fw-bold">
+                <img src="~/Images/logo1.png" alt="img" height="100" width="100" style="border-radius:50%" />
+                VedicPatasala
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav" style="padding-right:40px">
+                    <li class="nav-item" style="font-size:25px"><a class="nav-link" href="@Url.Action("Home", "Student")">Home</a></li>
+                    <li class="nav-item" style="font-size:25px"><a class="nav-link" href="@Url.Action("Examinations", "Student")">Exams</a></li>
+                    <li class="nav-item" style="font-size:25px"><a class="nav-link" href="@Url.Action("Events", "Student")">Events</a></li>
+                    <li class="nav-item" style="font-size:25px"><a class="nav-link" href="@Url.Action("About", "Student")">About School</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex">
+                @if (Session["Name"] != null)
+                {
+                    <span class="navbar-text text-white me-3" style="font-size:28px">
+                        <img src="https://png.pngtree.com/element_our/png/20181129/male-student-icon-png_251938.jpg"
+                             alt="student" width="50" height="50" class="me-2" />
+                        @Session["Name"] (@Session["Role"])
+                    </span>
+                    // <a style="padding: 10px; font-size: 25px" class="btn btn-light btn-sm" href="@Url.Action("Logout", "Register")">Logout</a>
+                }
+                else
+                {
+                    <a style="padding: 13px;font-size:25px" class="btn btn-light btn-sm me-2" href="@Url.Action("Login", "Register")">Login</a>
+                    <a style="padding:13px;font-size:25px;" class="btn btn-outline-light btn-sm" href="@Url.Action("Register", "Register")">Register</a>
+                }
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main layout area -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <h5 style="text-align:center">Menu</h5>
+                @if (Session["Role"]?.ToString() == "Admin")
+                {
+                    <a class="d-block mb-2" href="@Url.Action("Dashboard", "Admin")">Manage Students</a>
+                }
+                <a class="d-block mb-2 btn btn-primary" href="@Url.Action("Profile", "Student")">Profile</a>
+                <a class="d-block mb-2 btn btn-primary" href="@Url.Action("Logout", "Register")">Logout</a>
+            </div>
+
+            <!-- Main Content -->
+            <div style="background-color:azure" class="col-md-9 main-content">
+                @RenderBody()
+            </div>
+        </div>
+
+        <!-- Footer (directly under sidebar + content) -->
+        <div class="row">
+            <div class="col-12">
+                <footer>
+                    &copy; 2025 Student Portal. All rights reserved.                    
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

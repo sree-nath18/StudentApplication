@@ -1,0 +1,68 @@
+﻿@model StudentApplication.Models.Student
+
+@{
+    ViewBag.Title = "Profile";
+}
+<style>
+    h2{
+        animation:colorchange 2s ease-in-out
+    }
+    @@keyframes colorchange{
+                   0%{color:red;}
+                     50%{color:purple;}
+                     100%{color:red;}
+               }
+    table{
+        transition:transform 0.5s ease ease-in-out
+    }
+    table:hover{
+        transform:skew(10deg);
+        color:purple;
+    }
+
+</style>
+<div>
+    <h2 style="text-align:center;background-color:yellow;color:red"> Profile</h2>
+    <hr />
+    <table align="center" border="1" class=" table-bordered table-primary table-active table-responsive table-hover" width="80%">
+        <tr>
+            <td><b>Student Id</b></td>
+            <td>@Model.Sid</td>
+        </tr>
+        <tr>
+            <td><b> Name</b></td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td><b>Father Name</b></td>
+            <td>@Model.FatherName</td>
+        </tr>
+        <tr>
+            <td><b>Mother Name:</b></td>
+            <td>@Model.MotherName</td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth</b></td>
+            <td>@Model.DateOfBirth</td>
+        </tr>
+        <tr>
+            <td>
+                <b>Gender</b>
+            </td>
+            <td>@Model.Gender</td>
+        </tr>
+        <tr>
+            <td><b>Class</b></td>
+            <td>@Model.Class</td>
+        </tr>
+        <tr>
+            <td><b>Role</b></td>
+            <td>@Model.Role</td>
+        </tr>
+        <tr>
+            <td><b>Address</b></td>
+            <td>@Model.Address</td>
+        </tr>
+    </table>
+    </div>
+

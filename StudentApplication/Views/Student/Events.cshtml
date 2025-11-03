@@ -1,0 +1,290 @@
+﻿
+@{
+    ViewBag.Title = "Events";
+}
+<style>
+    h1 {
+        text-align: center;
+        text-decoration: blink;
+    }
+    h2{
+        text-align:center;
+        text-decoration:blink;
+        
+    }
+    table{
+        padding-left:100px;        
+        border:1px solid  black;
+        border-collapse:collapse;
+        margin:20px 0
+    }
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid black;
+    }
+   /* table:hover{
+        transform:scale(1.2);
+    }*/
+    .event-container{
+        padding-left:200px
+    }
+    .event-description{
+        font-size:15px;
+        color:brown;
+    }
+    .seminar-table:hover{
+        background-color:rgb(0, 255, 33)
+    }
+    .games-table:hover {
+        background-color: rgb(255, 106, 0)
+    }
+    .quiz-table:hover {
+        background-color: rgb(0 148 255)
+    }
+    .science-table:hover {
+        background-color: rgb(255 255 255)
+    }
+</style>
+<html>
+<body>
+    <h1 >School Events Schedule</h1>
+
+    <div class="event-container">
+        <h2>Sports Games</h2>
+        <p class="event-description">Annual sports competitions</p>
+        <table class="games-table">
+            <thead>
+                <tr>
+                    <th>Event ID</th>                    
+                    <th>Game Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Venue</th>
+                    <th>Participants</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>G001</td>
+                    <td>Basketball Tournament</td>
+                    <td>October</td>
+                    <td>9:00 AM - 12:00 PM</td>
+                    <td>Main Gymnasium</td>
+                    <td>Senior Division</td>
+                </tr>
+                <tr>
+                    <td>G002</td>
+                    <td>Soccer Match</td>
+                    <td>October</td>
+                    <td>2:00 PM - 4:00 PM</td>
+                    <td>School Ground</td>
+                    <td>Junior Division</td>
+                </tr>
+                <tr>
+                    <td>G003</td>
+                    <td>Table Tennis</td>
+                    <td>October</td>
+                    <td>10:00 AM - 1:00 PM</td>
+                    <td>Indoor Sports Complex</td>
+                    <td>All Grades</td>
+                </tr>
+                <tr>
+                    <td>G004</td>
+                    <td>Athletics Meet</td>
+                    <td>October</td>
+                    <td>8:00 AM - 3:00 PM</td>
+                    <td>Sports Field</td>
+                    <td>Senior Division</td>
+                </tr>
+                <tr>
+                    <td>G005</td>
+                    <td>Volleyball Championship</td>
+                    <td>October</td>
+                    <td>11:00 AM - 2:00 PM</td>
+                    <td>Outdoor Court</td>
+                    <td>Girls Division</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="event-container">
+        <h2>Quiz Competitions</h2>
+        <p class="event-description">Academic quiz competitions covering various subjects</p>
+        <table  align="center" class="quiz-table">
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Quiz Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Venue</th>
+                    <th>Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Q001</td>
+                    <td>Science Quiz</td>
+                    <td>December</td>
+                    <td>10:00 AM - 12:00 PM</td>
+                    <td>Science Lab 1</td>
+                    <td>Physics, Chemistry, Biology</td>
+                </tr>
+                <tr>
+                    <td>Q002</td>
+                    <td>Math Olympiad</td>
+                    <td>December</td>
+                    <td>9:30 AM - 11:30 AM</td>
+                    <td>Room 201</td>
+                    <td>Mathematics</td>
+                </tr>
+                <tr>
+                    <td>Q003</td>
+                    <td>General Knowledge Challenge</td>
+                    <td>December</td>
+                    <td>2:00 PM - 4:00 PM</td>
+                    <td>Auditorium</td>
+                    <td>General Knowledge</td>
+                </tr>
+                <tr>
+                    <td>Q004</td>
+                    <td>Literature Quiz</td>
+                    <td>December</td>
+                    <td>11:00 AM - 1:00 PM</td>
+                    <td>Library</td>
+                    <td>English Literature</td>
+                </tr>
+                <tr>
+                    <td>Q005</td>
+                    <td>History Bowl</td>
+                    <td>December</td>
+                    <td>10:00 AM - 12:00 PM</td>
+                    <td>Room 305</td>
+                    <td>World History</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="event-container">
+        <h2>Science Exhibition</h2>
+        <p class="event-description">Student science projects and innovations showcase</p>
+        <table  align="center"class="science-table">
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Project Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Venue</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SE001</td>
+                    <td>Renewable Energy Models</td>
+                    <td>January</td>
+                    <td>9:00 AM - 3:00 PM</td>
+                    <td>Science Block</td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>SE002</td>
+                    <td>Chemical Reactions Display</td>
+                    <td>January</td>
+                    <td>9:00 AM - 3:00 PM</td>
+                    <td>Chemistry Lab</td>
+                    <td>Chemistry</td>
+                </tr>
+                <tr>
+                    <td>SE003</td>
+                    <td>Ecosystem Models</td>
+                    <td>January</td>
+                    <td>9:00 AM - 3:00 PM</td>
+                    <td>Biology Lab</td>
+                    <td>Biology</td>
+                </tr>
+                <tr>
+                    <td>SE004</td>
+                    <td>Robotics Demonstration</td>
+                    <td>January</td>
+                    <td>10:00 AM - 2:00 PM</td>
+                    <td>Tech Center</td>
+                    <td>Technology</td>
+                </tr>
+                <tr>
+                    <td>SE005</td>
+                    <td>Environmental Science Projects</td>
+                    <td>January</td>
+                    <td>10:00 AM - 2:00 PM</td>
+                    <td>Greenhouse</td>
+                    <td>Environmental Science</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="event-container">
+        <h2>Seminars & Workshops</h2>
+        <p class="event-description">Educational seminars and skill development workshops</p>
+        <table align="center" class="seminar-table">
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Seminar Topic</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Venue</th>
+                    <th>Speaker/Instructor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>S001</td>
+                    <td>Career Guidance</td>
+                    <td>August</td>
+                    <td>2:00 PM - 4:00 PM</td>
+                    <td>Auditorium</td>
+                    <td>Dr. Robert Johnson</td>
+                </tr>
+                <tr>
+                    <td>S002</td>
+                    <td>Digital Literacy Workshop</td>
+                    <td>August</td>
+                    <td>2:00 PM - 4:00 PM</td>
+                    <td>Computer Lab 2</td>
+                    <td>Ms. Sarah Williams</td>
+                </tr>
+                <tr>
+                    <td>S003</td>
+                    <td>Mental Health Awareness</td>
+                    <td>August</td>
+                    <td>10:00 AM - 12:00 PM</td>
+                    <td>Room 104</td>
+                    <td>Dr. Amanda Chen</td>
+                </tr>
+                <tr>
+                    <td>S004</td>
+                    <td>Study Skills Seminar</td>
+                    <td>August</td>
+                    <td>3:00 PM - 5:00 PM</td>
+                    <td>Library Conference Room</td>
+                    <td>Prof. Michael Brown</td>
+                </tr>
+                <tr>
+                    <td>S005</td>
+                    <td>Financial Literacy Workshop</td>
+                    <td>August</td>
+                    <td>1:00 PM - 3:00 PM</td>
+                    <td>Economics Department</td>
+                    <td>Mr. David Wilson</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
